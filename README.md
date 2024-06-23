@@ -1,23 +1,22 @@
-# Verify.Terminal
+# ApprovalTests.Terminal
 
-A dotnet tool for managing Verify snapshots.  
-Inspired by the awesome [Insta](https://github.com/mitsuhiko/insta) crate.
+A dotnet tool for managing Approval Tests snapshots. Adapted from the [Verify Original](https://github.com/VerifyTests/Verify.Terminal)
 
-![A screenshot of Verify.Terminal](res/screenshot.png)
+![A screenshot of ApprovalTests.Terminal](res/screenshot.png)
 
 ## Installation
 
 Install by running the following command:
 
 ```bash
-dotnet tool install -g verify.tool
+dotnet tool install -g ApprovalTests.Terminal
 ```
 
 ## Review pending snapshots
 
 ```
 USAGE:
-    verify review [OPTIONS]
+    approvaltests review [OPTIONS]
 
 OPTIONS:
     -h, --help                    Prints help information
@@ -26,14 +25,14 @@ OPTIONS:
 ```
 
 ```
-> dotnet verify review
+> dotnet approvaltests review
 ```
 
-## Accept all pending snapshots
+## Approve all pending snapshots
 
 ```
 USAGE:
-    verify accept [OPTIONS]
+    approvaltests approve [OPTIONS]
 
 OPTIONS:
     -h, --help                Prints help information
@@ -42,14 +41,14 @@ OPTIONS:
 ```
 
 ```
-> dotnet verify accept
+> dotnet approvaltests approve
 ```
 
 ## Reject all pending snapshots
 
 ```
 USAGE:
-    verify reject [OPTIONS]
+    approvaltests reject [OPTIONS]
 
 OPTIONS:
     -h, --help                Prints help information
@@ -58,7 +57,7 @@ OPTIONS:
 ```
 
 ```
-> dotnet verify reject
+> dotnet approvaltests reject
 ```
 
 ## Building

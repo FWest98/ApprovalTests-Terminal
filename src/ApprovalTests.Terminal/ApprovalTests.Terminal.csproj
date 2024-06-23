@@ -1,0 +1,30 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFrameworks>net8.0;net7.0;net6.0</TargetFrameworks>
+    <IsPackable>true</IsPackable>
+    <PackAsTool>true</PackAsTool>
+    <PackageId>ApprovalTests.Terminal</PackageId>
+    <ToolCommandName>dotnet-approvaltests</ToolCommandName>
+    <RootNamespace>ApprovalTests.Terminal</RootNamespace>
+  </PropertyGroup>
+
+  <PropertyGroup Label="Package Information">
+    <Description>A dotnet tool for managing Approval Tests snapshots.</Description>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <AdditionalFiles Include="..\stylecop.json" Link="Properties/stylecop.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="DiffPlex" Version="1.7.2" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="7.0.0" />
+    <PackageReference Include="Spectre.Console" Version="0.47.0" />
+    <PackageReference Include="Spectre.Console.Cli" Version="0.47.0" />
+    <PackageReference Include="Spectre.Console.Analyzer" Version="0.47.0" />
+    <PackageReference Include="Spectre.IO" Version="0.13.0" />
+  </ItemGroup>
+
+</Project>

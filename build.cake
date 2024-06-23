@@ -5,9 +5,9 @@ var configuration = Argument("configuration", "Release");
 // Tasks
 
 Task("Build")
-    .Does(context => 
+    .Does(context =>
 {
-    DotNetBuild("./src/Verify.Terminal.sln", new DotNetBuildSettings {
+    DotNetBuild("./src/ApprovalTests.Terminal.sln", new DotNetBuildSettings {
         Configuration = configuration,
         NoIncremental = context.HasArgument("rebuild"),
         MSBuildSettings = new DotNetMSBuildSettings()
@@ -17,9 +17,9 @@ Task("Build")
 
 Task("Test")
     .IsDependentOn("Build")
-    .Does(context => 
+    .Does(context =>
 {
-    DotNetTest("./src/Verify.Terminal.sln", new DotNetTestSettings {
+    DotNetTest("./src/ApprovalTests.Terminal.sln", new DotNetTestSettings {
         Configuration = configuration,
         NoRestore = true,
         NoBuild = true,
@@ -28,11 +28,11 @@ Task("Test")
 
 Task("Pack")
     .IsDependentOn("Test")
-    .Does(context => 
+    .Does(context =>
 {
     CleanDirectory("./.artifacts");
 
-    DotNetPack("./src/Verify.Terminal.sln", new DotNetPackSettings {
+    DotNetPack("./src/ApprovalTests.Terminal.sln", new DotNetPackSettings {
         Configuration = configuration,
         NoRestore = true,
         NoBuild = true,
@@ -46,7 +46,7 @@ Task("Pack")
 Task("Publish")
     .WithCriteria(ctx => BuildSystem.IsRunningOnGitHubActions, "Not running on GitHub Actions")
     .IsDependentOn("Pack")
-    .Does(context => 
+    .Does(context =>
 {
     var apiKey = Argument<string>("nuget-key", null);
     if(string.IsNullOrWhiteSpace(apiKey)) {
@@ -54,7 +54,7 @@ Task("Publish")
     }
 
     // Publish to GitHub Packages
-    foreach(var file in context.GetFiles("./.artifacts/*.nupkg")) 
+    foreach(var file in context.GetFiles("./.artifacts/*.nupkg"))
     {
         Information("Publishing {0}...", file.GetFilename().FullPath);
         DotNetNuGetPush(file.FullPath, new DotNetNuGetPushSettings

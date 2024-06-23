@@ -18,15 +18,15 @@
   </PropertyGroup>
 
   <PropertyGroup Label="Package Information">
-    <Description>A dotnet tool for managing Verify snapshots.</Description>
-    <Copyright>Copyright Patrik Svensson, Simon Cropp</Copyright>
-    <Authors>Patrik Svensson, Simon Cropp</Authors>
+    <Description>A dotnet tool for managing Approval Tests snapshots.</Description>
+    <Copyright>Copyright Floris Westerman, Patrik Svensson, Simon Cropp</Copyright>
+    <Authors>Floris Westerman, Patrik Svensson, Simon Cropp</Authors>
     <RepositoryType>git</RepositoryType>
-    <RepositoryUrl>https://github.com/patriksvensson/verify.terminal</RepositoryUrl>
+    <RepositoryUrl>https://github.com/FWest98/ApprovalTests-Terminal</RepositoryUrl>
     <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
-    <PackageProjectUrl>https://github.com/patriksvensson/verify.terminal</PackageProjectUrl>
+    <PackageProjectUrl>https://github.com/FWest98/ApprovalTests-Terminal</PackageProjectUrl>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <PackageReleaseNotes>https://github.com/patriksvensson/verify.terminal/releases</PackageReleaseNotes>
+    <PackageReleaseNotes>https://github.com/FWest98/ApprovalTests-Terminal/releases</PackageReleaseNotes>
     <ResolveAssemblyReferencesSilent>true</ResolveAssemblyReferencesSilent>
   </PropertyGroup>
 
